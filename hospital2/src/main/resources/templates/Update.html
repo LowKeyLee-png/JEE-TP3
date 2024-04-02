@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
+</head>
+<body>
+<h1>Modifier patient</h1>
+<form method="post" th:action="@{save}" th:object="${patient}">
+    <label th:text="${patient.id}">Id</label>
+    <div>
+        <label>Nom</label>
+        <input class="form-control" type="text" id="nom" th:value="${patient.nom}"></div>
+    <div>
+        <label>Malade</label>
+        <input  type="checkbox" id="malade" th:checked="${patient.malade}">
+    </div>
+    <div>
+        <label>score</label>
+        <input class="form-control" type="text" id="score" th:value="${patient.score}">
+    </div>
+    <button type="submit" class="btn btn-dark m-6">Enregistrer</button>
+</form>
+
+</body>
+</html>
